@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 13, 2021 at 04:08 PM
--- Server version: 5.7.31
--- PHP Version: 7.3.21
+-- Generation Time: Jan 06, 2022 at 02:51 PM
+-- Server version: 5.7.36
+-- PHP Version: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,8 +18,31 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `showroommoto`
+-- Database: `nhom2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `manufactures`
+--
+
+DROP TABLE IF EXISTS `manufactures`;
+CREATE TABLE IF NOT EXISTS `manufactures` (
+  `manu_id` int(11) NOT NULL AUTO_INCREMENT,
+  `manu_name` varchar(100) COLLATE utf8_croatian_ci NOT NULL,
+  PRIMARY KEY (`manu_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+
+--
+-- Dumping data for table `manufactures`
+--
+
+INSERT INTO `manufactures` (`manu_id`, `manu_name`) VALUES
+(1, 'Kawasaki'),
+(2, 'Yamaha'),
+(3, 'Honda'),
+(4, 'BMW');
 
 -- --------------------------------------------------------
 
@@ -88,6 +111,62 @@ INSERT INTO `products` (`id`, `name`, `manu_id`, `type_id`, `price`, `image`, `d
 (39, 'BMW S 1000 XR ', 4, 11, 899000000, 'BMW S 1000 XR.jpg', 'Động cơ	\r\nLoại động cơ	4 thì, DOHC, giải nhiệt chất lỏng 4 xy-lanh thẳng hàng, 4 van trên 1 xy-lanh\r\nĐường kính xy-lanh * hành trình xy-lanh	80 mm * 49.7 mm\r\nDung tích xy-lanh	999 cc\r\nCông suất tối đa	118 kW (160 mã lực) tại 11.000 vòng/phút\r\nMô-men xoắn tối đa	112 Nm tại 9.250 vòng/phút\r\nTỉ số nén	12,0 : 1\r\nĐiều khiển hòa khí / Điều khiển động cơ	Phun xăng điện tử\r\nKiểm soát khí thải	Bộ chuyển đổi xúc tác 3 vòng khép kín với ống dẫn giao thoa\r\nHiệu suất / Tiêu hao nhiên liệu\r\nTốc độ tối đa	trên 200 km/h\r\nTiêu hao nhiên liệu trên 100 km với vận tốc không đổi 90 km/h	5.4 l\r\nTiêu hao nhiên liệu trên 100 km với vận tốc không đổi 120 km/h	5.8 l\r\nLoại nhiên liệu	Xăng không chì chỉ số RON từ 95 trở lên\r\nHệ thống điện\r\nMáy phát điện	486 W\r\nBình điện	12 V / 8 Ah, maintenance-free\r\nBộ truyền động\r\nLy hợp	Đa đĩa ngâm trong nhớt, chống trượt, điều khiển bằng cơ khí\r\nHộp số	6 tốc độ\r\nTruyền động	Sên, nhông 17 răng và đĩa 45 răng\r\nKhung sườn / hệ thống phanh\r\nKhung sườn	Nhôm\r\nHệ thống treo trước / phuộc trước	Hành trình ngược Upside-down đường kính 46 mm, Có thể điều chỉnh độ nén và độ hồi\r\nHệ thống treo sau / phuộc sau	Gắp đôi, phuộc đơn có thể điều chỉnh độ hồi\r\nHành trình phuộc trước / sau	150 mm / 140 mm\r\nChiều dài cơ sở	1,548 mm\r\nCastor	117 mm\r\nGóc đánh lái tối đa	64.5°\r\nMâm	Hợp kim nhôm\r\nKích thước mâm trước	3,50 x 17″\r\nKích thước mâm sau	6,00 x 17″\r\nKích thước vỏ xe trước	120/70 ZR 17\r\nKích thước vỏ xe sau	190/55 ZR 17\r\nHệ thống phanh trước	Đĩa đôi đường kính 320mm, cùm phanh loại 4 piston radial\r\nHệ thống phanh sau	Đĩa đơn, cùm phanh 2- piston loại floating, đường kính 265mm\r\nHệ thống chống bó cứng phanh ABS	BMW Motorrad Race ABS\r\nKích thước / Trọng lượng\r\nDài	2,183 mm\r\nRộng (bao gồm kính chiếu hậu)	940 mm\r\nCao (trừ kính chiếu hậu)	1,408 mm\r\nChiều cao ghế, trọng lượng không tải	840 mm\r\nĐường cong chân trong, trọng lượng không tải	1,894 mm\r\nTrọng lượng không tải, có bình điện, nhiên liệu đầy đủ	228 kg\r\nTổng tải trọng cho phép	434 kg\r\nTải trọng (với thiết bị tiêu chuẩn)	206 kg\r\nDung tích bình xăng có thể sử dụng	20 l\r\nĐèn báo tiếp nhiên liệu sẽ sáng khi bình xăng còn	4 l', 11, '2021-11-01'),
 (40, 'BMW F 900 XR', 4, 11, 736000000, 'BMW F 900 XR.jpg', 'Động cơ\r\nLoại động cơ	Động cơ 4 thì 2 xi lanh song song, 4 cò mổ xú páp trên 1 xi lanh, làm mát bằng chất lỏng. EURO5\r\nĐường kính / Hành trình piston	86 mm x 77 mm\r\nDung tích	895 cc\r\nCông suất cực đại	105 Hp (77kW) tại 8.500 vòng/phút (rpm)\r\nMô-men xoắn cực đại	92 Nm tại 6.500 vòng/phút (rpm)\r\nTỷ số nén	13,1 : 1\r\nĐiều khiển hòa khí	Phun nhiên liệu điện tử\r\nKiểm soát khí thải	Bộ chuyển đổi xúc tác 3 vòng khép kín; Đạt chuẩn EURO5\r\nHiệu suất / Tiêu hao nhiên liệu\r\nTốc độ tối đa	Hơn 200 km/h\r\nTiêu hao nhiên liệu trên 100km theo tiêu chuẩn WMTC	4,2 l\r\nLoại nhiên liệu	Xăng không chì, chỉ số octane  tối thiểu từ 95 (RON)\r\nHệ thống điện\r\nMáy phát điện	416 W\r\nẮc-quy	12 V / 12 Ah, Không cần bảo trì\r\nHệ thống truyền động\r\nLy hợp	Đĩa đơn, khô, điều khiển cơ học\r\nHộp số	6 cấp\r\nTruyền động	Truyền động xích O-ring chống rung tại đùm bánh sau\r\nKhung xe / Hệ thống phanh\r\nKhung xe	Ống thép, dạng cầu\r\nHệ thống treo trước / Phuộc trước	Phuộc ống lồng hành trình ngược, đường kính 43 mm\r\nHệ thống treo sau / Phuộc sau	Gắp đôi nhôm đúc, giảm xóc trung tâm, điều chỉnh trọng lượng Preload và độ hồi Rebound\r\nHành trình phuộc trước/sau	170 mm / 172 mm\r\nChiều dài cơ sở	1.521 mm\r\nĐộ nghiêng của trục bánh trước	114,1 mm\r\nGiới hạn góc đánh lái	60,5°\r\nMâm	Nhôm đúc\r\nKích thước mâm trước	3,50 x 17″\r\nKích thước mâm sau	5,50 x 17″\r\nKích thước lốp trước	120/70 ZR 17\r\nKích thước lốp sau	180/55 ZR 17\r\nPhanh trước	Đĩa đôi đường kính 320mm, cùm phanh thủy lực 4 piston\r\nPhanh sau	Đĩa đơn đường kính 265mm, cùm phanh thủy lực piston đơn\r\nChống bó cứng phanh ABS	BMW Motorrad ABS\r\nKích thước / Cân nặng\r\nChiều cao yên	825 mm\r\nKhoảng cách giữa 2 bàn chân	1.840 mm\r\nDung tích bình xăng	15,5 l\r\nLượng xăng còn lại khi đồng hồ báo 1 vạch	Khoảng 3,5 l\r\nChiều dài	2.160 mm\r\nChiều cao (trừ gương chiếu hậu)	1.320 mm\r\nChiều rộng (gồm gương chiếu hậu)	860 mm\r\nTrọng lượng ướt (Đầy nhiên liệu, sẵn sàng di chuyển)	219 kg\r\nTải trọng tối đa cho phép	438 kg\r\nTrọng lượng khi đầy đủ trang bị	219 kg\r\nTrang bị\r\nTrang bị tiêu chuẩn	• Màn hình màu TFT với kết nối thông minh BMW Motorrad Connectivity\r\n• Đèn pha LED (cốt/pha)\r\n• Xi nhan LED\r\n• Cân bằng điện tử tự động ASC\r\n• 2 chế độ lái Rain/Road\r\n• Tay phanh/côn tùy chỉnh\r\n• Ổ cắm 12V\r\n• Kính chắn gió tùy chỉnh\r\nTrang bị tùy chọn	Trang bị tùy chọn (OE)\r\n• Đèn pha Pro với đèn nghiêng theo góc lái\r\n• Chế độ lái Pro với ABS Pro / DTC / MSR / DBC\r\n• Hệ thống treo điện tử Dynamic ESA (Electronic suspension adjustment)\r\n• Gá treo thùng.\r\n• Chân chống đứng.\r\n• Bảo vệ tay lái.\r\n• Chìa khóa thông minh\r\nPhụ kiện tùy chọn (OA)\r\n• Thùng mềm và thùng Touring.\r\n• Khung gắn thùng.\r\n• Thùng Top sau.\r\n• Đèn LED sương mù.\r\n• Mỏ cày động cơ.\r\n• Kính chắn gió thể thao.\r\n• Các loại yên xe khác.', 11, '2021-11-01'),
 (41, 'BMW F 900 R', 4, 12, 768000000, 'BMW F 900 R.jpg', 'Động cơ\r\nLoại động cơ	Động cơ 4 thì 2 xi lanh song song, 4 cò mổ xú páp trên 1 xi lanh, làm mát bằng chất lỏng. EURO 5.\r\nĐường kính / Hành trình piston	86 mm x 77 mm\r\nDung tích	895 cc\r\nCông suất cực đại	105 Hp (77kW) tại 8.500 vòng/phút (rpm)\r\nMô-men xoắn cực đại	92 Nm tại 6.500 vòng/phút (rpm)\r\nTỷ số nén	13,1 : 1\r\nĐiều khiển hòa khí	Phun nhiên liệu điện tử\r\nKiểm soát khí thải	Bộ chuyển đổi xúc tác 3 vòng khép kín; Đạt chuẩn EURO5\r\nHiệu suất / Tiêu hao nhiên liệu\r\nTốc độ tối đa	216 km/h\r\nTiêu hao nhiên liệu trên 100km theo tiêu chuẩn WMTC	4,2 l\r\nLoại nhiên liệu	Xăng không chì, chỉ số octane  tối thiểu từ 95 (RON)\r\nHệ thống điện\r\nMáy phát điện	416 W\r\nẮc-quy	12 V / 12 Ah, Không cần bảo trì\r\nHệ thống truyền động\r\nLy hợp	Đĩa đơn, khô, điều khiển cơ học\r\nHộp số	6 cấp\r\nTruyền động	Truyền động xích O-ring chống rung tại đùm bánh sau\r\nKhung xe / Hệ thống phanh\r\nKhung xe	Ống thép, dạng cầu\r\nHệ thống treo trước / Phuộc trước	Phuộc ống lồng hành trình ngược, đường kính 43 mm\r\nHệ thống treo sau / Phuộc sau	Gắp đôi nhôm đúc, giảm xóc trung tâm, điều chỉnh trọng lượng Preload và độ hồi Rebound\r\nHành trình phuộc trước/sau	135 mm / 142 mm\r\nChiều dài cơ sở	1.518 mm\r\nĐộ nghiêng của trục bánh trước	114,1 mm\r\nGiới hạn góc đánh lái	60,5°\r\nMâm	Nhôm đúc\r\nKích thước mâm trước	3,50 x 17″\r\nKích thước mâm sau	5,50 x 17″\r\nKích thước lốp trước	120/70 ZR 17\r\nKích thước lốp sau	170/60 ZR 17\r\nPhanh trước	Đĩa đôi đường kính 320mm, cùm phanh thủy lực 4 piston\r\nPhanh sau	Đĩa đơn đường kính 265mm, cùm phanh thủy lực piston đơn\r\nChống bó cứng phanh ABS	BMW Motorrad ABS\r\nKích thước / Cân nặng\r\nChiều cao yên	815 mm\r\nKhoảng cách giữa 2 bàn chân	1.820 mm\r\nDung tích bình xăng	13 l\r\nLượng xăng còn lại khi đồng hồ báo 1 vạch	Khoảng 3,5 l\r\nChiều dài	2.140 mm\r\nChiều cao (trừ gương chiếu hậu)	1.130 mm\r\nChiều rộng (gồm gương chiếu hậu)	815 mm\r\nTrọng lượng ướt (Đầy nhiên liệu, sẵn sàng di chuyển)	211 kg\r\nTải trọng tối đa cho phép	430 kg\r\nTrọng lượng khi đầy đủ trang bị	219 kg\r\nTrang bị\r\nTrang bị tiêu chuẩn	• Màn hình màu TFT với kết nối thông minh BMW Motorrad Connectivity\r\n• Đèn pha LED (cốt/pha)\r\n• Xi nhan LED\r\n• Cân bằng điện tử tự động ASC\r\n• 2 chế độ lái Rain/Road\r\n• Tay phanh/côn tùy chỉnh\r\n• Ổ cắm 12V\r\nTrang bị tùy chọn	Trang bị tùy chọn (OE)\r\n• Đèn pha Pro với đèn nghiêng theo góc lái\r\n• Chế độ lái Pro với ABS Pro / DTC / MSR / DBC\r\n• Hệ thống treo điện tử Dynamic ESA (Electronic suspension adjustment)\r\n• Chìa khóa thông minh\r\n• Áp suất lốp RDC (tire pressure control)\r\nPhụ kiện tùy chọn (OA)\r\n• Mỏ cày động cơ.\r\n• Yên solo.\r\n• Gác chân và gương hậu CNC\r\n• Yên xe khác.\r\n• Gá đỡ thùng.\r\n• Thùng mềm.\r\n• Kính chắn gió cao.\r\n• Chân chống đứng.', 12, '2021-11-01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `protypes`
+--
+
+DROP TABLE IF EXISTS `protypes`;
+CREATE TABLE IF NOT EXISTS `protypes` (
+  `type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_name` varchar(100) COLLATE utf8_croatian_ci NOT NULL,
+  PRIMARY KEY (`type_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+
+--
+-- Dumping data for table `protypes`
+--
+
+INSERT INTO `protypes` (`type_id`, `type_name`) VALUES
+(1, 'KAWASAKI NINJA H2 CARBON'),
+(2, 'KAWASAKI Z1000R ABS 2021'),
+(3, 'KAWASAKI W175 SE'),
+(4, 'KAWASAKI VULCAN S'),
+(10, 'BMW S 1000 RR 2021'),
+(5, 'KAWASAKI VERSYS-X 300 ABS TOURER'),
+(8, 'HONDA CBR500R 2021'),
+(6, 'YAMAHA YZF-R1M 2022'),
+(9, 'HONDA CB1000R'),
+(7, 'YAMAHA MT-09 SP 2021'),
+(11, 'BMW R 1250 GS Adventure\r\n'),
+(12, 'BMW F 900 R');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
+(9, 'admin', 'nhat@gmail.com', '123456'),
+(10, 'nhatnhinho', 'nhan@gmail.com', '0d033b42741823c0729a37ce5234f57e'),
+(11, 'nhÃ¢n', '20211TT2166@mail.tdc.edu.vn', '0052069db1a0017f6a27f27e6dcbb919'),
+(12, 'nhan', 'hoanchinhan@gmail.com', '202cb962ac59075b964b07152d234b70');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
